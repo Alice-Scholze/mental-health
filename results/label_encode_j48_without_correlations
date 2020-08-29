@@ -1,0 +1,135 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.J48 -C 0.25 -M 2
+Relation:     cleaned_survey-weka.filters.unsupervised.attribute.Remove-R1-weka.filters.unsupervised.attribute.Remove-R8,11-12,16,18-21
+Instances:    1031
+Attributes:   14
+              Age
+              Gender
+              self_employed
+              family_history
+              treatment
+              work_interfere
+              no_employees
+              benefits
+              care_options
+              anonymity
+              leave
+              mental_health_consequence
+              coworkers
+              obs_consequence
+Test mode:    split 80.0% train, remainder test
+
+=== Classifier model (full training set) ===
+
+J48 pruned tree
+------------------
+
+family_history <= 0
+|   Gender <= 0
+|   |   coworkers <= 0: No (18.0/5.0)
+|   |   coworkers > 0
+|   |   |   no_employees <= 3
+|   |   |   |   care_options <= 0
+|   |   |   |   |   mental_health_consequence <= 0: No (5.0/1.0)
+|   |   |   |   |   mental_health_consequence > 0: Yes (16.0/7.0)
+|   |   |   |   care_options > 0: Yes (38.0/8.0)
+|   |   |   no_employees > 3
+|   |   |   |   Age <= 0.222222: No (10.0/1.0)
+|   |   |   |   Age > 0.222222: Yes (7.0/2.0)
+|   Gender > 0
+|   |   leave <= 0
+|   |   |   work_interfere <= 0: No (23.0/3.0)
+|   |   |   work_interfere > 0
+|   |   |   |   mental_health_consequence <= 0: Yes (14.0/2.0)
+|   |   |   |   mental_health_consequence > 0
+|   |   |   |   |   self_employed <= 0
+|   |   |   |   |   |   no_employees <= 1: No (24.0/4.0)
+|   |   |   |   |   |   no_employees > 1: Yes (20.0/6.0)
+|   |   |   |   |   self_employed > 0: Yes (7.0/1.0)
+|   |   leave > 0
+|   |   |   Age <= 0.37037
+|   |   |   |   work_interfere <= 0: No (150.0/30.0)
+|   |   |   |   work_interfere > 0
+|   |   |   |   |   self_employed <= 0
+|   |   |   |   |   |   mental_health_consequence <= 0: No (97.0/20.0)
+|   |   |   |   |   |   mental_health_consequence > 0
+|   |   |   |   |   |   |   Age <= 0.092593
+|   |   |   |   |   |   |   |   no_employees <= 2: Yes (9.0/1.0)
+|   |   |   |   |   |   |   |   no_employees > 2: No (3.0/1.0)
+|   |   |   |   |   |   |   Age > 0.092593: No (100.0/27.0)
+|   |   |   |   |   self_employed > 0
+|   |   |   |   |   |   mental_health_consequence <= 0: No (18.0/5.0)
+|   |   |   |   |   |   mental_health_consequence > 0: Yes (9.0/2.0)
+|   |   |   Age > 0.37037
+|   |   |   |   self_employed <= 0
+|   |   |   |   |   care_options <= 0
+|   |   |   |   |   |   benefits <= 0: Yes (3.0/1.0)
+|   |   |   |   |   |   benefits > 0: No (15.0/3.0)
+|   |   |   |   |   care_options > 0
+|   |   |   |   |   |   mental_health_consequence <= 0: No (22.0/10.0)
+|   |   |   |   |   |   mental_health_consequence > 0: Yes (23.0/6.0)
+|   |   |   |   self_employed > 0: No (8.0/1.0)
+family_history > 0
+|   care_options <= 0
+|   |   self_employed <= 0
+|   |   |   anonymity <= 0: Yes (9.0/1.0)
+|   |   |   anonymity > 0
+|   |   |   |   mental_health_consequence <= 0
+|   |   |   |   |   Age <= 0.277778: Yes (33.0/11.0)
+|   |   |   |   |   Age > 0.277778: No (10.0/2.0)
+|   |   |   |   mental_health_consequence > 0
+|   |   |   |   |   coworkers <= 0
+|   |   |   |   |   |   benefits <= 0: No (6.0/1.0)
+|   |   |   |   |   |   benefits > 0
+|   |   |   |   |   |   |   no_employees <= 4
+|   |   |   |   |   |   |   |   Gender <= 0: Yes (4.0/1.0)
+|   |   |   |   |   |   |   |   Gender > 0: No (2.0)
+|   |   |   |   |   |   |   no_employees > 4: Yes (4.0)
+|   |   |   |   |   coworkers > 0: Yes (57.0/14.0)
+|   |   self_employed > 0
+|   |   |   anonymity <= 0: No (2.0)
+|   |   |   anonymity > 0
+|   |   |   |   Gender <= 0: Yes (3.0)
+|   |   |   |   Gender > 0
+|   |   |   |   |   obs_consequence <= 0
+|   |   |   |   |   |   no_employees <= 1: No (5.0)
+|   |   |   |   |   |   no_employees > 1: Yes (2.0)
+|   |   |   |   |   obs_consequence > 0: Yes (2.0)
+|   care_options > 0: Yes (253.0/50.0)
+
+Number of Leaves  : 	37
+
+Size of the tree : 	73
+
+
+Time taken to build model: 0.04 seconds
+
+=== Evaluation on test split ===
+
+Time taken to test model on test split: 0 seconds
+
+=== Summary ===
+
+Correctly Classified Instances         140               67.9612 %
+Incorrectly Classified Instances        66               32.0388 %
+Kappa statistic                          0.3592
+Mean absolute error                      0.4012
+Root mean squared error                  0.4838
+Relative absolute error                 79.2759 %
+Root relative squared error             95.4599 %
+Total Number of Instances              206     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.648    0.272    0.786      0.648    0.711      0.368    0.702     0.742     Yes
+                 0.728    0.352    0.573      0.728    0.641      0.368    0.702     0.542     No
+Weighted Avg.    0.680    0.303    0.702      0.680    0.683      0.368    0.702     0.663     
+
+=== Confusion Matrix ===
+
+  a  b   <-- classified as
+ 81 44 |  a = Yes
+ 22 59 |  b = No
+

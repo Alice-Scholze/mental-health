@@ -1,0 +1,73 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.RandomForest -P 100 -I 100 -num-slots 1 -K 0 -M 1.0 -V 0.001 -S 1
+Relation:     original_survey-weka.filters.unsupervised.attribute.Remove-R1
+Instances:    1259
+Attributes:   27
+              Timestamp
+              Age
+              Gender
+              Country
+              state
+              self_employed
+              family_history
+              treatment
+              work_interfere
+              no_employees
+              remote_work
+              tech_company
+              benefits
+              care_options
+              wellness_program
+              seek_help
+              anonymity
+              leave
+              mental_health_consequence
+              phys_health_consequence
+              coworkers
+              supervisor
+              mental_health_interview
+              phys_health_interview
+              mental_vs_physical
+              obs_consequence
+              comments
+Test mode:    split 80.0% train, remainder test
+
+=== Classifier model (full training set) ===
+
+RandomForest
+
+Bagging with 100 iterations and base learner
+
+weka.classifiers.trees.RandomTree -K 0 -M 1.0 -V 0.001 -S 1 -do-not-check-capabilities
+
+Time taken to build model: 1.02 seconds
+
+=== Evaluation on test split ===
+
+Time taken to test model on test split: 0.05 seconds
+
+=== Summary ===
+
+Correctly Classified Instances         187               74.2063 %
+Incorrectly Classified Instances        65               25.7937 %
+Kappa statistic                          0.4865
+Mean absolute error                      0.4363
+Root mean squared error                  0.4463
+Relative absolute error                 87.0812 %
+Root relative squared error             89.035  %
+Total Number of Instances              252     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.797    0.306    0.696      0.797    0.743      0.491    0.830     0.827     Yes
+                 0.694    0.203    0.795      0.694    0.741      0.491    0.830     0.824     No
+Weighted Avg.    0.742    0.251    0.749      0.742    0.742      0.491    0.830     0.826     
+
+=== Confusion Matrix ===
+
+  a  b   <-- classified as
+ 94 24 |  a = Yes
+ 41 93 |  b = No
+

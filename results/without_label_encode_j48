@@ -1,0 +1,271 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.J48 -C 0.25 -M 2
+Relation:     cleaned_survey-weka.filters.unsupervised.attribute.Remove-R1
+Instances:    1031
+Attributes:   22
+              Age
+              Gender
+              self_employed
+              family_history
+              treatment
+              work_interfere
+              no_employees
+              remote_work
+              benefits
+              care_options
+              wellness_program
+              seek_help
+              anonymity
+              leave
+              mental_health_consequence
+              phys_health_consequence
+              coworkers
+              supervisor
+              mental_health_interview
+              phys_health_interview
+              mental_vs_physical
+              obs_consequence
+Test mode:    split 80.0% train, remainder test
+
+=== Classifier model (full training set) ===
+
+J48 pruned tree
+------------------
+
+family_history = No
+|   work_interfere <= 1
+|   |   work_interfere <= 0
+|   |   |   remote_work = No
+|   |   |   |   care_options <= 0: Yes (9.0)
+|   |   |   |   care_options > 0
+|   |   |   |   |   Age <= 0.296296
+|   |   |   |   |   |   supervisor <= 0: Yes (4.0/1.0)
+|   |   |   |   |   |   supervisor > 0: No (8.0/1.0)
+|   |   |   |   |   Age > 0.296296: Yes (8.0/1.0)
+|   |   |   remote_work = Yes: Yes (19.0)
+|   |   work_interfere > 0
+|   |   |   phys_health_consequence <= 1
+|   |   |   |   supervisor <= 1
+|   |   |   |   |   wellness_program <= 1
+|   |   |   |   |   |   seek_help <= 1
+|   |   |   |   |   |   |   leave <= 3
+|   |   |   |   |   |   |   |   no_employees <= 0: No (3.0)
+|   |   |   |   |   |   |   |   no_employees > 0
+|   |   |   |   |   |   |   |   |   wellness_program <= 0: Yes (8.0/1.0)
+|   |   |   |   |   |   |   |   |   wellness_program > 0
+|   |   |   |   |   |   |   |   |   |   leave <= 1: No (8.0/2.0)
+|   |   |   |   |   |   |   |   |   |   leave > 1: Yes (11.0/2.0)
+|   |   |   |   |   |   |   leave > 3: Yes (7.0)
+|   |   |   |   |   |   seek_help > 1: No (4.0/1.0)
+|   |   |   |   |   wellness_program > 1: Yes (7.0)
+|   |   |   |   supervisor > 1
+|   |   |   |   |   mental_vs_physical <= 0: No (3.0)
+|   |   |   |   |   mental_vs_physical > 0
+|   |   |   |   |   |   Gender <= 0: Yes (2.0)
+|   |   |   |   |   |   Gender > 0
+|   |   |   |   |   |   |   phys_health_interview <= 0: No (2.0)
+|   |   |   |   |   |   |   phys_health_interview > 0
+|   |   |   |   |   |   |   |   remote_work = No
+|   |   |   |   |   |   |   |   |   phys_health_interview <= 1: Yes (2.0)
+|   |   |   |   |   |   |   |   |   phys_health_interview > 1: No (5.0/1.0)
+|   |   |   |   |   |   |   |   remote_work = Yes: Yes (2.0)
+|   |   |   phys_health_consequence > 1
+|   |   |   |   benefits <= 0
+|   |   |   |   |   no_employees <= 4: Yes (3.0)
+|   |   |   |   |   no_employees > 4: No (3.0/1.0)
+|   |   |   |   benefits > 0: No (8.0)
+|   work_interfere > 1
+|   |   work_interfere <= 2: No (150.0/14.0)
+|   |   work_interfere > 2
+|   |   |   care_options <= 0
+|   |   |   |   self_employed = No
+|   |   |   |   |   benefits <= 0
+|   |   |   |   |   |   mental_health_interview <= 0: No (4.0/1.0)
+|   |   |   |   |   |   mental_health_interview > 0
+|   |   |   |   |   |   |   supervisor <= 1
+|   |   |   |   |   |   |   |   leave <= 3: Yes (28.0/5.0)
+|   |   |   |   |   |   |   |   leave > 3: No (7.0/1.0)
+|   |   |   |   |   |   |   supervisor > 1: Yes (14.0/1.0)
+|   |   |   |   |   benefits > 0
+|   |   |   |   |   |   wellness_program <= 0: Yes (2.0)
+|   |   |   |   |   |   wellness_program > 0
+|   |   |   |   |   |   |   mental_health_interview <= 0: Yes (2.0)
+|   |   |   |   |   |   |   mental_health_interview > 0
+|   |   |   |   |   |   |   |   remote_work = No
+|   |   |   |   |   |   |   |   |   Gender <= 0: Yes (2.0)
+|   |   |   |   |   |   |   |   |   Gender > 0
+|   |   |   |   |   |   |   |   |   |   mental_vs_physical <= 1
+|   |   |   |   |   |   |   |   |   |   |   coworkers <= 1: No (5.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   coworkers > 1
+|   |   |   |   |   |   |   |   |   |   |   |   no_employees <= 2: Yes (4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   no_employees > 2: No (2.0)
+|   |   |   |   |   |   |   |   |   |   mental_vs_physical > 1: No (6.0/1.0)
+|   |   |   |   |   |   |   |   remote_work = Yes: No (10.0/2.0)
+|   |   |   |   self_employed = Yes
+|   |   |   |   |   anonymity <= 0: No (10.0/1.0)
+|   |   |   |   |   anonymity > 0
+|   |   |   |   |   |   anonymity <= 1: Yes (2.0)
+|   |   |   |   |   |   anonymity > 1: No (3.0/1.0)
+|   |   |   care_options > 0
+|   |   |   |   self_employed = No
+|   |   |   |   |   Gender <= 0
+|   |   |   |   |   |   remote_work = No
+|   |   |   |   |   |   |   leave <= 2
+|   |   |   |   |   |   |   |   no_employees <= 0: Yes (2.0)
+|   |   |   |   |   |   |   |   no_employees > 0
+|   |   |   |   |   |   |   |   |   supervisor <= 1
+|   |   |   |   |   |   |   |   |   |   phys_health_interview <= 1: No (9.0/1.0)
+|   |   |   |   |   |   |   |   |   |   phys_health_interview > 1
+|   |   |   |   |   |   |   |   |   |   |   mental_health_consequence <= 0: Yes (2.0)
+|   |   |   |   |   |   |   |   |   |   |   mental_health_consequence > 0: No (6.0)
+|   |   |   |   |   |   |   |   |   supervisor > 1: Yes (5.0/2.0)
+|   |   |   |   |   |   |   leave > 2: No (4.0)
+|   |   |   |   |   |   remote_work = Yes
+|   |   |   |   |   |   |   mental_health_consequence <= 0: No (2.0)
+|   |   |   |   |   |   |   mental_health_consequence > 0: Yes (10.0/2.0)
+|   |   |   |   |   Gender > 0
+|   |   |   |   |   |   phys_health_consequence <= 0
+|   |   |   |   |   |   |   supervisor <= 1
+|   |   |   |   |   |   |   |   no_employees <= 1: Yes (3.0)
+|   |   |   |   |   |   |   |   no_employees > 1: No (4.0)
+|   |   |   |   |   |   |   supervisor > 1: Yes (2.0)
+|   |   |   |   |   |   phys_health_consequence > 0: No (187.0/35.0)
+|   |   |   |   self_employed = Yes
+|   |   |   |   |   Gender <= 0: No (2.0)
+|   |   |   |   |   Gender > 0
+|   |   |   |   |   |   benefits <= 1
+|   |   |   |   |   |   |   phys_health_consequence <= 1
+|   |   |   |   |   |   |   |   supervisor <= 0: No (6.0/1.0)
+|   |   |   |   |   |   |   |   supervisor > 0: Yes (5.0/1.0)
+|   |   |   |   |   |   |   phys_health_consequence > 1: Yes (5.0)
+|   |   |   |   |   |   benefits > 1
+|   |   |   |   |   |   |   phys_health_interview <= 0: Yes (2.0)
+|   |   |   |   |   |   |   phys_health_interview > 0: No (6.0)
+family_history = Yes
+|   work_interfere <= 1
+|   |   coworkers <= 0: Yes (37.0)
+|   |   coworkers > 0
+|   |   |   benefits <= 1: Yes (69.0/6.0)
+|   |   |   benefits > 1
+|   |   |   |   phys_health_interview <= 0: Yes (4.0)
+|   |   |   |   phys_health_interview > 0
+|   |   |   |   |   mental_health_consequence <= 1
+|   |   |   |   |   |   Age <= 0.351852: Yes (6.0)
+|   |   |   |   |   |   Age > 0.351852: No (2.0)
+|   |   |   |   |   mental_health_consequence > 1: No (6.0/1.0)
+|   work_interfere > 1
+|   |   work_interfere <= 2
+|   |   |   phys_health_interview <= 1
+|   |   |   |   phys_health_consequence <= 1
+|   |   |   |   |   coworkers <= 0: No (3.0)
+|   |   |   |   |   coworkers > 0
+|   |   |   |   |   |   leave <= 1: Yes (2.0)
+|   |   |   |   |   |   leave > 1
+|   |   |   |   |   |   |   wellness_program <= 1
+|   |   |   |   |   |   |   |   benefits <= 0: No (4.0/1.0)
+|   |   |   |   |   |   |   |   benefits > 0: Yes (4.0)
+|   |   |   |   |   |   |   wellness_program > 1: No (3.0)
+|   |   |   |   phys_health_consequence > 1: Yes (2.0)
+|   |   |   phys_health_interview > 1: No (10.0)
+|   |   work_interfere > 2
+|   |   |   mental_health_consequence <= 0: Yes (54.0/7.0)
+|   |   |   mental_health_consequence > 0
+|   |   |   |   care_options <= 0
+|   |   |   |   |   remote_work = No: Yes (52.0/7.0)
+|   |   |   |   |   remote_work = Yes
+|   |   |   |   |   |   wellness_program <= 0: Yes (5.0)
+|   |   |   |   |   |   wellness_program > 0
+|   |   |   |   |   |   |   supervisor <= 1
+|   |   |   |   |   |   |   |   Age <= 0.259259: No (2.0)
+|   |   |   |   |   |   |   |   Age > 0.259259: Yes (6.0)
+|   |   |   |   |   |   |   supervisor > 1: No (5.0/1.0)
+|   |   |   |   care_options > 0
+|   |   |   |   |   wellness_program <= 0
+|   |   |   |   |   |   care_options <= 1: No (5.0)
+|   |   |   |   |   |   care_options > 1
+|   |   |   |   |   |   |   coworkers <= 1: No (3.0)
+|   |   |   |   |   |   |   coworkers > 1: Yes (4.0)
+|   |   |   |   |   wellness_program > 0
+|   |   |   |   |   |   remote_work = No
+|   |   |   |   |   |   |   Gender <= 0: Yes (5.0/1.0)
+|   |   |   |   |   |   |   Gender > 0
+|   |   |   |   |   |   |   |   benefits <= 0: No (6.0/1.0)
+|   |   |   |   |   |   |   |   benefits > 0
+|   |   |   |   |   |   |   |   |   coworkers <= 0: Yes (8.0/1.0)
+|   |   |   |   |   |   |   |   |   coworkers > 0
+|   |   |   |   |   |   |   |   |   |   no_employees <= 4
+|   |   |   |   |   |   |   |   |   |   |   mental_health_interview <= 1
+|   |   |   |   |   |   |   |   |   |   |   |   phys_health_interview <= 0: No (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   phys_health_interview > 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   mental_health_consequence <= 1
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   Age <= 0.203704: No (6.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   Age > 0.203704: Yes (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   mental_health_consequence > 1
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   wellness_program <= 1
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   obs_consequence = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   mental_vs_physical <= 0: No (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   mental_vs_physical > 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   leave <= 1: Yes (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   leave > 1
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   coworkers <= 1: No (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   coworkers > 1
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   benefits <= 1: Yes (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   benefits > 1
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Age <= 0.259259: No (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Age > 0.259259: Yes (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   obs_consequence = Yes: Yes (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   wellness_program > 1: Yes (3.0)
+|   |   |   |   |   |   |   |   |   |   |   mental_health_interview > 1: Yes (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   no_employees > 4: Yes (6.0)
+|   |   |   |   |   |   remote_work = Yes
+|   |   |   |   |   |   |   benefits <= 1: Yes (16.0/1.0)
+|   |   |   |   |   |   |   benefits > 1
+|   |   |   |   |   |   |   |   mental_health_interview <= 0: Yes (3.0)
+|   |   |   |   |   |   |   |   mental_health_interview > 0
+|   |   |   |   |   |   |   |   |   seek_help <= 1
+|   |   |   |   |   |   |   |   |   |   no_employees <= 1: No (5.0)
+|   |   |   |   |   |   |   |   |   |   no_employees > 1
+|   |   |   |   |   |   |   |   |   |   |   supervisor <= 0: Yes (3.0)
+|   |   |   |   |   |   |   |   |   |   |   supervisor > 0: No (2.0)
+|   |   |   |   |   |   |   |   |   seek_help > 1
+|   |   |   |   |   |   |   |   |   |   no_employees <= 1: Yes (7.0)
+|   |   |   |   |   |   |   |   |   |   no_employees > 1
+|   |   |   |   |   |   |   |   |   |   |   mental_vs_physical <= 1: Yes (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   mental_vs_physical > 1: No (3.0)
+
+Number of Leaves  : 	101
+
+Size of the tree : 	201
+
+
+Time taken to build model: 0.04 seconds
+
+=== Evaluation on test split ===
+
+Time taken to test model on test split: 0 seconds
+
+=== Summary ===
+
+Correctly Classified Instances         146               70.8738 %
+Incorrectly Classified Instances        60               29.1262 %
+Kappa statistic                          0.415 
+Mean absolute error                      0.3368
+Root mean squared error                  0.4945
+Relative absolute error                 66.5476 %
+Root relative squared error             97.5678 %
+Total Number of Instances              206     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.680    0.247    0.810      0.680    0.739      0.423    0.712     0.764     Yes
+                 0.753    0.320    0.604      0.753    0.670      0.423    0.712     0.551     No
+Weighted Avg.    0.709    0.276    0.729      0.709    0.712      0.423    0.712     0.680     
+
+=== Confusion Matrix ===
+
+  a  b   <-- classified as
+ 85 40 |  a = Yes
+ 20 61 |  b = No
+

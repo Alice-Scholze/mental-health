@@ -1,0 +1,60 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.RandomForest -P 100 -I 100 -num-slots 1 -K 0 -M 1.0 -V 0.001 -S 1
+Relation:     cleaned_survey-weka.filters.unsupervised.attribute.Remove-R1-weka.filters.unsupervised.attribute.Remove-R8,11-12,16,18-21
+Instances:    1031
+Attributes:   14
+              Age
+              Gender
+              self_employed
+              family_history
+              treatment
+              work_interfere
+              no_employees
+              benefits
+              care_options
+              anonymity
+              leave
+              mental_health_consequence
+              coworkers
+              obs_consequence
+Test mode:    split 80.0% train, remainder test
+
+=== Classifier model (full training set) ===
+
+RandomForest
+
+Bagging with 100 iterations and base learner
+
+weka.classifiers.trees.RandomTree -K 0 -M 1.0 -V 0.001 -S 1 -do-not-check-capabilities
+
+Time taken to build model: 0.27 seconds
+
+=== Evaluation on test split ===
+
+Time taken to test model on test split: 0.02 seconds
+
+=== Summary ===
+
+Correctly Classified Instances         137               66.5049 %
+Incorrectly Classified Instances        69               33.4951 %
+Kappa statistic                          0.3287
+Mean absolute error                      0.3848
+Root mean squared error                  0.48  
+Relative absolute error                 76.0446 %
+Root relative squared error             94.7022 %
+Total Number of Instances              206     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.640    0.296    0.769      0.640    0.699      0.336    0.726     0.772     Yes
+                 0.704    0.360    0.559      0.704    0.623      0.336    0.726     0.615     No
+Weighted Avg.    0.665    0.321    0.686      0.665    0.669      0.336    0.726     0.710     
+
+=== Confusion Matrix ===
+
+  a  b   <-- classified as
+ 80 45 |  a = Yes
+ 24 57 |  b = No
+

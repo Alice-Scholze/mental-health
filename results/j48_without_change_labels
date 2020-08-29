@@ -1,0 +1,181 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.J48 -C 0.25 -M 2
+Relation:     cleaned_survey-weka.filters.unsupervised.attribute.Remove-R1
+Instances:    1031
+Attributes:   22
+              Age
+              Gender
+              self_employed
+              family_history
+              treatment
+              work_interfere
+              no_employees
+              remote_work
+              benefits
+              care_options
+              wellness_program
+              seek_help
+              anonymity
+              leave
+              mental_health_consequence
+              phys_health_consequence
+              coworkers
+              supervisor
+              mental_health_interview
+              phys_health_interview
+              mental_vs_physical
+              obs_consequence
+Test mode:    split 80.0% train, remainder test
+
+=== Classifier model (full training set) ===
+
+J48 pruned tree
+------------------
+
+family_history = No
+|   work_interfere = Often
+|   |   remote_work = No
+|   |   |   coworkers = Some of them
+|   |   |   |   mental_health_interview = No: Yes (9.0/1.0)
+|   |   |   |   mental_health_interview = Yes: Yes (0.0)
+|   |   |   |   mental_health_interview = Maybe: No (2.0)
+|   |   |   coworkers = Yes: Yes (9.0)
+|   |   |   coworkers = No
+|   |   |   |   seek_help = Yes: No (0.0)
+|   |   |   |   seek_help = No: No (7.0/1.0)
+|   |   |   |   seek_help = Dont know: Yes (2.0)
+|   |   remote_work = Yes: Yes (19.0)
+|   work_interfere = Rarely
+|   |   phys_health_consequence = No
+|   |   |   leave = Somewhat easy
+|   |   |   |   care_options = Not sure: No (2.0)
+|   |   |   |   care_options = No: No (4.0/1.0)
+|   |   |   |   care_options = Yes: Yes (11.0/2.0)
+|   |   |   leave = Somewhat difficult
+|   |   |   |   remote_work = No: No (5.0)
+|   |   |   |   remote_work = Yes: Yes (2.0)
+|   |   |   leave = Dont know: Yes (28.0/9.0)
+|   |   |   leave = Very difficult: No (2.0)
+|   |   |   leave = Very easy: Yes (9.0/1.0)
+|   |   phys_health_consequence = Yes: Yes (1.0)
+|   |   phys_health_consequence = Maybe: No (14.0/4.0)
+|   work_interfere = Never: No (150.0/14.0)
+|   work_interfere = Sometimes
+|   |   care_options = Not sure
+|   |   |   leave = Somewhat easy
+|   |   |   |   wellness_program = No: No (11.0)
+|   |   |   |   wellness_program = Dont know
+|   |   |   |   |   Age <= 0.185185: No (3.0)
+|   |   |   |   |   Age > 0.185185: Yes (2.0)
+|   |   |   |   wellness_program = Yes: Yes (1.0)
+|   |   |   leave = Somewhat difficult
+|   |   |   |   seek_help = Yes: No (2.0)
+|   |   |   |   seek_help = No: Yes (4.0)
+|   |   |   |   seek_help = Dont know: Yes (2.0)
+|   |   |   leave = Dont know: No (54.0/8.0)
+|   |   |   leave = Very difficult: Yes (2.0/1.0)
+|   |   |   leave = Very easy
+|   |   |   |   mental_health_interview = No: No (11.0)
+|   |   |   |   mental_health_interview = Yes: Yes (1.0)
+|   |   |   |   mental_health_interview = Maybe
+|   |   |   |   |   wellness_program = No: No (3.0)
+|   |   |   |   |   wellness_program = Dont know: Yes (0.0)
+|   |   |   |   |   wellness_program = Yes: Yes (3.0)
+|   |   care_options = No
+|   |   |   self_employed = No: No (148.0/38.0)
+|   |   |   self_employed = Yes
+|   |   |   |   mental_health_consequence = No
+|   |   |   |   |   phys_health_interview = Maybe: No (5.0)
+|   |   |   |   |   phys_health_interview = Yes: No (0.0)
+|   |   |   |   |   phys_health_interview = No: Yes (3.0/1.0)
+|   |   |   |   mental_health_consequence = Yes: Yes (2.0)
+|   |   |   |   mental_health_consequence = Maybe: Yes (5.0/1.0)
+|   |   care_options = Yes
+|   |   |   self_employed = No
+|   |   |   |   benefits = Yes
+|   |   |   |   |   mental_health_interview = No: Yes (42.0/8.0)
+|   |   |   |   |   mental_health_interview = Yes: No (4.0/1.0)
+|   |   |   |   |   mental_health_interview = Maybe
+|   |   |   |   |   |   mental_health_consequence = No: No (5.0/1.0)
+|   |   |   |   |   |   mental_health_consequence = Yes: No (0.0)
+|   |   |   |   |   |   mental_health_consequence = Maybe: Yes (2.0)
+|   |   |   |   benefits = No
+|   |   |   |   |   wellness_program = No
+|   |   |   |   |   |   mental_health_interview = No: No (25.0/8.0)
+|   |   |   |   |   |   mental_health_interview = Yes: Yes (2.0)
+|   |   |   |   |   |   mental_health_interview = Maybe
+|   |   |   |   |   |   |   Age <= 0.314815: Yes (2.0)
+|   |   |   |   |   |   |   Age > 0.314815: No (2.0)
+|   |   |   |   |   wellness_program = Dont know: No (0.0)
+|   |   |   |   |   wellness_program = Yes: Yes (2.0)
+|   |   |   |   benefits = Dont know: Yes (0.0)
+|   |   |   self_employed = Yes
+|   |   |   |   anonymity = Yes: No (10.0/1.0)
+|   |   |   |   anonymity = Dont know: No (3.0/1.0)
+|   |   |   |   anonymity = No: Yes (2.0)
+family_history = Yes
+|   work_interfere = Often: Yes (65.0/7.0)
+|   work_interfere = Rarely: Yes (59.0/6.0)
+|   work_interfere = Never: No (28.0/9.0)
+|   work_interfere = Sometimes
+|   |   mental_health_consequence = No
+|   |   |   care_options = Not sure
+|   |   |   |   mental_health_interview = No: No (12.0/4.0)
+|   |   |   |   mental_health_interview = Yes: Yes (2.0)
+|   |   |   |   mental_health_interview = Maybe: Yes (3.0)
+|   |   |   care_options = No
+|   |   |   |   leave = Somewhat easy: No (8.0/2.0)
+|   |   |   |   leave = Somewhat difficult: No (3.0)
+|   |   |   |   leave = Dont know
+|   |   |   |   |   Age <= 0.296296: Yes (11.0/1.0)
+|   |   |   |   |   Age > 0.296296: No (2.0)
+|   |   |   |   leave = Very difficult: Yes (1.0)
+|   |   |   |   leave = Very easy: No (12.0/5.0)
+|   |   |   care_options = Yes: Yes (37.0/9.0)
+|   |   mental_health_consequence = Yes: Yes (54.0/7.0)
+|   |   mental_health_consequence = Maybe
+|   |   |   coworkers = Some of them: Yes (72.0/14.0)
+|   |   |   coworkers = Yes: Yes (10.0/1.0)
+|   |   |   coworkers = No
+|   |   |   |   leave = Somewhat easy: No (3.0/1.0)
+|   |   |   |   leave = Somewhat difficult: Yes (2.0)
+|   |   |   |   leave = Dont know: No (8.0/1.0)
+|   |   |   |   leave = Very difficult: No (0.0)
+|   |   |   |   leave = Very easy: No (0.0)
+
+Number of Leaves  : 	75
+
+Size of the tree : 	111
+
+
+Time taken to build model: 0.02 seconds
+
+=== Evaluation on test split ===
+
+Time taken to test model on test split: 0 seconds
+
+=== Summary ===
+
+Correctly Classified Instances         154               74.7573 %
+Incorrectly Classified Instances        52               25.2427 %
+Kappa statistic                          0.4972
+Mean absolute error                      0.3282
+Root mean squared error                  0.458 
+Relative absolute error                 64.8618 %
+Root relative squared error             90.3711 %
+Total Number of Instances              206     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.696    0.173    0.861      0.696    0.770      0.511    0.755     0.805     Yes
+                 0.827    0.304    0.638      0.827    0.720      0.511    0.755     0.590     No
+Weighted Avg.    0.748    0.224    0.774      0.748    0.750      0.511    0.755     0.720     
+
+=== Confusion Matrix ===
+
+  a  b   <-- classified as
+ 87 38 |  a = Yes
+ 14 67 |  b = No
+
